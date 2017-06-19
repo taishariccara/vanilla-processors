@@ -1,0 +1,149 @@
+#N canvas 130 61 936 432 10;
+#X obj 163 72 cyclone/scope~ 255 133 42 3 41 -1 1 0 0 1 0.11811 205
+229 232 74 79 77 96 98 102 0;
+#X obj 14 37 r f_bufsize;
+#X obj 12 75 r f_calccount;
+#X floatatom 168 226 5 8 256 2 Bufsize calc_bufsize f_bufsize, f 5
+;
+#X floatatom 222 226 5 2 8192 2 Calcct. calc_calccount f_calccount
+, f 5;
+#X obj 433 74 vsl 15 128 0 1 0 0 calc_search empty Render -10 -9 0
+10 -262144 -1 -1 5200 1;
+#X obj 577 34 r calc_search;
+#X floatatom 577 55 5 0 0 0 - - -, f 5;
+#X floatatom 577 120 5 0 0 0 - - -, f 5;
+#X obj 675 34 r calc_search;
+#X floatatom 675 56 5 0 0 0 - - -, f 5;
+#X floatatom 675 160 5 0 0 0 - - -, f 5;
+#X obj 675 183 s calc_calccount;
+#X obj 675 100 *;
+#X obj 577 144 s calc_bufsize;
+#X obj 675 75 fbounds 512 2;
+#X obj 577 74 fbounds 256 8;
+#X obj 577 96 ftoint-div;
+#X obj 675 122 ftoint-div;
+#X obj 474 74 vsl 15 128 -1 1 0 0 f_triglevel empty TrigLvl -11 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 13 99 r f_triglevel;
+#X msg 13 121 triglevel \$1;
+#X obj 496 159 vradio 15 1 0 3 f_trigmode empty TrigMode 0 -8 0 10
+-262144 -1 -1 0;
+#X text 514 174 Up;
+#X text 514 189 Down;
+#X text 513 159 None;
+#X obj 13 142 r f_trigmode;
+#X msg 13 164 trigger \$1;
+#X obj 432 225 hradio 15 1 0 4 calc_delay empty Delay 0 -8 0 10 -262144
+-1 -1 0;
+#X text 497 225 x100ms;
+#X text 432 243 0;
+#X text 477 243 10;
+#X text 465 243 5;
+#X text 449 243 2;
+#X obj 841 58 sel 0 1 2 3;
+#X msg 841 107 0;
+#X obj 841 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 857 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 872 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 888 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 841 36 r calc_delay;
+#X msg 857 131 2;
+#X msg 873 156 5;
+#X msg 888 179 10;
+#X obj 865 233 * 100;
+#X floatatom 865 255 5 0 0 0 - - -, f 5;
+#X obj 865 274 s f_delay;
+#X obj 14 187 r f_delay;
+#X msg 14 209 delay \$1;
+#X obj 161 59 cnv 5 1 1 empty empty PCYCIK-SCOPE 0 0 0 24 -233017 -66577
+0;
+#X obj 168 260 cnv 5 5 5 empty empty HappyThoughtz_Audio 0 0 0 8 -262144
+-1 0;
+#X obj 11 6 inlet~;
+#X obj 155 39 cnv 5 1 1 empty empty IN 0 0 0 8 -233017 -66577 0;
+#X obj 362 226 tgl 15 0 calc_range empty Range -35 7 0 10 -262144 -1
+-1 0 1;
+#X floatatom 385 226 5 1 1.5 2 RngVal - calc_rngval, f 5;
+#X obj 674 215 r calc_range;
+#X msg 704 100 0.6, f 4;
+#X obj 744 99 loadbang;
+#X obj 674 237 sel 0 1;
+#X obj 674 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 690 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 714 264 r calc_rngval;
+#N canvas 118 234 296 300 rng 0;
+#X obj 44 11 inlet;
+#X obj 44 64 t f f;
+#X obj 44 86 * -1;
+#X obj 44 119 pack -1 1;
+#X msg 44 141 set range \, add2 \$1 \, add2 \$2;
+#X obj 44 163 outlet;
+#X obj 80 88 * 1;
+#X text 17 197 create a range message for scope~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 3 1;
+#X restore 714 297 pd rng;
+#X msg 714 319 range -1.5 1.5;
+#X obj 714 341 s f_range;
+#X obj 14 229 r f_range;
+#X msg 625 319 range -1 1;
+#X obj 625 341 s f_range;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 16 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 13 0 18 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 8 0;
+#X connect 18 0 11 0;
+#X connect 20 0 21 0;
+#X connect 21 0 0 0;
+#X connect 26 0 27 0;
+#X connect 27 0 0 0;
+#X connect 34 0 36 0;
+#X connect 34 1 37 0;
+#X connect 34 2 38 0;
+#X connect 34 3 39 0;
+#X connect 35 0 44 0;
+#X connect 36 0 35 0;
+#X connect 37 0 41 0;
+#X connect 38 0 42 0;
+#X connect 39 0 43 0;
+#X connect 40 0 34 0;
+#X connect 41 0 44 0;
+#X connect 42 0 44 0;
+#X connect 43 0 44 0;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
+#X connect 47 0 48 0;
+#X connect 48 0 0 0;
+#X connect 51 0 0 0;
+#X connect 55 0 58 0;
+#X connect 56 0 13 1;
+#X connect 57 0 56 0;
+#X connect 58 0 59 0;
+#X connect 58 1 60 0;
+#X connect 59 0 66 0;
+#X connect 60 0 63 0;
+#X connect 61 0 62 0;
+#X connect 62 0 63 0;
+#X connect 63 0 64 0;
+#X connect 65 0 0 0;
+#X connect 66 0 67 0;
+#X coords 0 -1 1 1 410 240 2 150 30;

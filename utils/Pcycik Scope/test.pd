@@ -1,1 +1,4 @@
-#N canvas 670 351 450 300 10;
+#N canvas 673 548 595 339 10;
+#X obj 29 22 osc~ 24;
+#X obj 28 46 pcycik-scope~;
+#X connect 0 0 1 0;
