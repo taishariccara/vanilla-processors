@@ -1,0 +1,6 @@
+#N canvas 128 318 450 300 10;
+#X obj 252 75 sidekik-scope;
+#X obj 83 80 osc~ 20;
+#X floatatom 83 56 5 0 0 0 - - -, f 5;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
