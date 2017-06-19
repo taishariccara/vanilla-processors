@@ -1,0 +1,15 @@
+#N canvas 65 93 450 300 10;
+#X obj 99 24 osc~ 440;
+#X obj 143 173 dac~;
+#X obj 174 22 osc~ 640;
+#X obj 295 87 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 248 23 osc~ 840;
+#X obj 323 23 osc~ 1040;
+#X obj 164 106 route4x1~;
+#X connect 0 0 6 0;
+#X connect 2 0 6 1;
+#X connect 3 0 6 4;
+#X connect 4 0 6 2;
+#X connect 5 0 6 3;
+#X connect 6 0 1 0;
