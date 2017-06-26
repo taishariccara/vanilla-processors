@@ -1,0 +1,10 @@
+#N canvas 670 242 427 136 10;
+#X obj 28 30 inlet;
+#X obj 28 52 + 0.5;
+#X obj 28 74 div;
+#X obj 28 96 outlet;
+#X text 80 34 Simple float to int rounding for positive input values.
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
