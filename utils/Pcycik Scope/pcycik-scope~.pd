@@ -8,7 +8,7 @@
 #X floatatom 222 226 5 2 8192 2 Calcct. calc_calccount f_calccount
 , f 5;
 #X obj 433 74 vsl 15 128 0 1 0 0 calc_search empty Render -10 -9 0
-10 -262144 -1 -1 5200 1;
+10 -262144 -1 -1 0 1;
 #X obj 577 34 r calc_search;
 #X floatatom 577 55 5 0 0 0 - - -, f 5;
 #X floatatom 577 120 5 0 0 0 - - -, f 5;
@@ -59,8 +59,8 @@
 #X obj 865 274 s f_delay;
 #X obj 14 187 r f_delay;
 #X msg 14 209 delay \$1;
-#X obj 161 59 cnv 5 1 1 empty empty PCYCIK-SCOPE 0 0 0 24 -233017 -66577
-0;
+#X obj 161 59 cnv 5 1 1 empty empty PCYCIK-SCOPE~ 0 0 0 24 -233017
+-66577 0;
 #X obj 168 260 cnv 5 5 5 empty empty HappyThoughtz_Audio 0 0 0 8 -262144
 -1 0;
 #X obj 11 6 inlet~;

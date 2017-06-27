@@ -1,10 +1,10 @@
 #N canvas 125 236 805 576 10;
-#N canvas 0 22 450 278 (subpatch) 0;
+#N canvas 0 50 450 278 (subpatch) 0;
 #X array \$0-scope 512 float 0;
 #X coords 0 1 511 -1 100 60 1 0 0;
 #X restore 107 130 graph;
 #X obj 291 103 inlet~;
-#X obj 192 113 cnv 5 5 5 empty empty SIDEKIK 0 0 0 12 -233017 -66577
+#X obj 192 113 cnv 5 5 5 empty empty SIDEKIK~ 0 0 0 12 -233017 -66577
 0;
 #X obj 108 202 cnv 5 5 5 empty empty HappyThoughtz_Audio 0 0 0 8 -262144
 -1 0;
