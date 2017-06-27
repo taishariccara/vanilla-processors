@@ -1,0 +1,10 @@
+#N canvas 185 125 750 411 10;
+#X obj 61 37 r pd-dsp-started;
+#X floatatom 106 72 5 0 0 0 - - -, f 5;
+#X floatatom 61 125 5 0 0 0 - - -, f 5;
+#X obj 61 95 clk-div~;
+#X obj 164 111 pcycik-scope;
+#X connect 0 0 3 0;
+#X connect 1 0 3 1;
+#X connect 3 0 2 0;
+#X connect 3 1 4 0;

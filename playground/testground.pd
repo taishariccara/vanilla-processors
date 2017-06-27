@@ -1,0 +1,8 @@
+#N canvas 0 50 450 300 10;
+#X floatatom 111 66 5 0 0 0 - - -, f 5;
+#X floatatom 48 25 5 0 0 0 - - -, f 5;
+#X obj 48 44 ftoint-wrap;
+#X floatatom 48 66 5 0 0 0 - - -, f 5;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 0 0;
