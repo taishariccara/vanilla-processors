@@ -1,14 +1,13 @@
-#N canvas 185 125 750 411 10;
+#N canvas 86 127 750 411 10;
 #X obj 64 49 r pd-dsp-started;
 #X floatatom 64 119 5 0 0 0 - - -, f 5;
-#X obj 283 103 pcycik-scope;
-#X obj 371 29 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4000 1;
-#X floatatom 357 53 5 0 0 0 - - -, f 5;
-#X floatatom 188 61 5 0 0 0 - - -, f 5;
+#X obj 286 111 pcycik-scope;
+#X obj 185 49 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 182 70 5 0 0 0 - - -, f 5;
 #X obj 64 93 srclk-div-famt~;
-#X connect 0 0 6 0;
+#X connect 0 0 5 0;
 #X connect 3 0 4 0;
-#X connect 5 0 6 1;
-#X connect 6 0 1 0;
-#X connect 6 1 2 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 5 1 2 0;
