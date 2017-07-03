@@ -1,0 +1,19 @@
+#N canvas 127 84 958 617 10;
+#X obj 155 135 phasor~ 440;
+#X obj 156 184 cos~;
+#X obj 154 268 pcycik-scope;
+#X obj 326 107 * 0.99;
+#X obj 326 129 pack 0 50;
+#X obj 326 151 line~;
+#X obj 326 85 * 0.00787402;
+#X obj 330 37 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 156 206 expr~ $v1 < $v2;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 1;
+#X connect 6 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 2 0;
