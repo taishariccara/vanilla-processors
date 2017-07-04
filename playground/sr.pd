@@ -1,0 +1,16 @@
+#N canvas 853 310 306 315 10;
+#X obj 101 84 samplerate~;
+#X obj 101 57 loadbang;
+#X floatatom 101 106 5 0 0 0 - - -, f 5;
+#X obj 19 32 inlet;
+#X obj 101 147 outlet;
+#X obj 101 125 i;
+#X text 19 208 abstraction to output the current sample rate set in
+the dsp audio settings.;
+#X obj 19 54 t b;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;
