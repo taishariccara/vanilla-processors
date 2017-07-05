@@ -1,4 +1,4 @@
-#N canvas 710 158 1195 866 10;
+#N canvas 507 119 1195 866 10;
 #X obj 31 146 phasor~ 440;
 #X obj 32 195 cos~;
 #X obj 30 279 pcycik-scope;
@@ -9,23 +9,38 @@
 #X obj 206 48 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 32 217 expr~ $v1 < $v2;
-#X obj 579 111 sr;
-#X floatatom 579 133 5 0 0 0 - - -, f 5;
-#X obj 579 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 734 69 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 581 126 sr;
+#X floatatom 581 155 5 0 0 0 - - -, f 5;
+#X obj 581 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 634 188 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 731 89 5 0 0 0 - - -, f 5;
-#X floatatom 731 166 10 0 0 0 - - -, f 10;
-#X msg 786 109 11025;
-#X msg 842 110 210;
-#X msg 671 112 reset;
-#X text 922 67 test patches for sr \, normtorange .....;
-#X obj 731 144 normtorange 44100 0;
-#X obj 744 323 clk-div;
-#X obj 786 271 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X floatatom 631 208 5 0 0 0 - - -, f 5;
+#X floatatom 631 285 10 0 0 0 - - -, f 10;
+#X msg 686 228 11025;
+#X msg 742 229 210;
+#X msg 571 231 reset;
+#X obj 595 358 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 783 291 5 0 0 0 - - -, f 5;
+#X floatatom 592 378 5 0 0 0 - - -, f 5;
+#X floatatom 609 474 10 0 0 0 - - -, f 10;
+#X floatatom 753 478 10 0 0 0 - - -, f 10;
+#X floatatom 663 389 5 0 0 0 - - -, f 5;
+#X floatatom 714 400 5 0 0 0 - - -, f 5;
+#X obj 609 451 ftoint-wrap;
+#X obj 753 454 ftoint-wrap;
+#X obj 664 422 sr-div;
+#X obj 735 374 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 678 632 fdecimals;
+#X floatatom 729 600 5 0 0 0 - - -, f 5;
+#X obj 616 567 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 614 586 10 0 0 0 - - -, f 10;
+#X floatatom 678 654 5 0 0 0 - - -, f 5;
+#X text 577 44 test patches for sr \, normtorange \, sr-div \, fdecimals
+;
+#X obj 631 263 normtorange 44100 0;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;
 #X connect 3 0 4 0;
@@ -37,10 +52,21 @@
 #X connect 9 0 10 0;
 #X connect 11 0 9 0;
 #X connect 12 0 13 0;
-#X connect 13 0 19 0;
-#X connect 15 0 19 1;
-#X connect 16 0 19 2;
-#X connect 17 0 19 0;
-#X connect 19 0 14 0;
-#X connect 21 0 22 0;
-#X connect 22 0 20 2;
+#X connect 13 0 34 0;
+#X connect 15 0 34 1;
+#X connect 16 0 34 2;
+#X connect 17 0 34 0;
+#X connect 18 0 19 0;
+#X connect 19 0 26 0;
+#X connect 22 0 26 1;
+#X connect 23 0 26 2;
+#X connect 24 0 20 0;
+#X connect 25 0 21 0;
+#X connect 26 0 24 0;
+#X connect 26 1 25 0;
+#X connect 27 0 23 0;
+#X connect 28 0 32 0;
+#X connect 29 0 28 1;
+#X connect 30 0 31 0;
+#X connect 31 0 28 0;
+#X connect 34 0 14 0;
