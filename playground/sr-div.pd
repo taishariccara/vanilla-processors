@@ -1,12 +1,11 @@
-#N canvas 35 69 667 392 10;
+#N canvas 19 415 667 392 10;
 #X obj 97 54 inlet;
 #X obj 228 54 inlet;
 #X obj 365 54 inlet;
 #X obj 136 301 outlet;
-#X obj 328 301 outlet;
-#X text 33 322 outp i-clk: clock rate after int division;
-#X text 327 322 outp f-clk: clock rate after float amount division
-;
+#X obj 348 301 outlet;
+#X text 344 330 outp i-clk: clock rate after int division;
+#X text 11 328 outp f-clk: clock rate after float amount division;
 #X obj 97 97 f 1;
 #X obj 365 200 i 44100;
 #X floatatom 97 119 5 0 0 0 - - -, f 5;
@@ -15,11 +14,12 @@
 #X obj 136 265 *;
 #X obj 228 96 i 1;
 #X floatatom 228 118 5 0 0 0 - - -, f 5;
-#X obj 328 265 /;
+#X obj 348 255 /;
 #X obj 228 137 t b f;
 #X text 199 21 inp i: divider (hot);
 #X text 27 21 inp f: amount [0..1] (hot);
 #X text 352 21 inp i: sample rate (cold);
+#X floatatom 348 277 5 0 0 0 - - -, f 5;
 #X connect 0 0 7 0;
 #X connect 1 0 13 0;
 #X connect 2 0 8 0;
@@ -33,6 +33,7 @@
 #X connect 12 0 3 0;
 #X connect 13 0 14 0;
 #X connect 14 0 16 0;
-#X connect 15 0 4 0;
+#X connect 15 0 20 0;
 #X connect 16 0 8 0;
 #X connect 16 1 15 1;
+#X connect 20 0 4 0;
