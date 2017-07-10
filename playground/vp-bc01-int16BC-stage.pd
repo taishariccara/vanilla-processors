@@ -1,0 +1,46 @@
+#N canvas 482 130 688 447 10;
+#X obj 37 40 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 34 60 normtorange 16 1;
+#X obj 34 82 ftoint-wrap;
+#X floatatom 34 104 5 0 0 0 - - -, f 5;
+#X obj 34 123 s \$0-calc-bits;
+#X obj 36 207 r \$0-calc-bits;
+#X obj 36 276 <<;
+#X msg 36 229 1 \$1;
+#X obj 36 251 unpack f f;
+#X floatatom 36 298 5 0 0 0 - - -, f 5;
+#X obj 36 317 s \$0-calc-steps;
+#X obj 353 46 r \$0-calc-steps;
+#X obj 277 47 inlet~;
+#X obj 353 68 sig~;
+#X obj 277 119 +~;
+#X obj 245 69 f 1;
+#X obj 245 91 sig~;
+#X obj 277 141 snapshot~;
+#X floatatom 277 163 5 0 0 0 - - -, f 5;
+#X obj 367 108 metro 200;
+#X obj 244 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 189 208 todo: make an audio abstraction that does ftoint-div
+and ftoint-div... and then add it in here.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 8 1 6 1;
+#X connect 9 0 10 0;
+#X connect 11 0 13 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 1;
+#X connect 14 0 17 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;
+#X connect 19 0 17 0;
+#X connect 20 0 15 0;
+#X connect 20 0 19 0;
