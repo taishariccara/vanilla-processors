@@ -6,37 +6,10 @@
 #X msg 402 66 \; pd dsp \$1;
 #X obj 385 118 cnv 15 250 280 empty empty DSP-Section 5 10 0 14 -232576
 -66577 0;
-#X obj 399 194 sinosc~;
-#X floatatom 399 172 5 0 0 0 - - -, f 5;
-#X obj 520 192 sinosc~;
-#X floatatom 520 172 5 0 0 0 - - -, f 5;
-#X obj 439 370 dac~;
-#X text 397 144 dry sig;
-#X text 512 143 wet sig;
-#X obj 438 338 +~;
-#X obj 399 276 *~;
-#X obj 520 274 *~;
-#X obj 413 246 r~ \$0-calc-dry;
-#X obj 535 241 r~ \$0-calc-wet;
 #X obj 35 117 cnv 15 250 280 empty empty Input-Section 5 10 0 14 -203904
 -66577 0;
-#X obj 88 163 hsl 128 15 1 0 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4600 1;
-#X floatatom 85 212 5 0 0 0 - - -, f 5;
-#X obj 185 241 * -1;
-#X obj 185 219 - 1;
-#X floatatom 185 263 5 0 0 0 - - -, f 5;
-#X text 52 159 dry;
-#X text 229 162 wet;
-#X obj 85 253 line~;
-#X obj 185 304 line~;
-#X obj 85 285 s~ \$0-calc-dry;
-#X obj 186 330 s~ \$0-calc-wet;
 #X obj 33 5 cnv 15 250 100 empty empty Description 5 10 0 14 -228856
 -66577 0;
-#X text 41 29 Dry Wet Mixer Demo Patch;
-#X text 41 49 Mixes a dry (uneffected) and a wet(effected) signal into
-one output signal, f 39;
 #N canvas 90 309 450 265 macros-do-not-delete 0;
 #N canvas 764 72 450 176 license-text 0;
 #X text 20 13 Copyright ©  2017 \, Benjamin Fabricius \, Vanilla
@@ -67,27 +40,7 @@ the GNU General Public License for more details.;
 #X obj 37 407 cnv 15 250 35 empty empty empty 15 10 0 10 -233017 -66577
 0;
 #X text 41 407 Copyright © 2017 \, Benjamin Fabricius;
-#X text 41 422 Happy Thoughtz Audio - htaudio.de;
-#X msg 85 231 \$1 50;
-#X msg 185 282 \$1 50;
+#X text 41 422 Happy Thoughts Audio - htaudio.de;
+#X text 41 29 Title of Patch;
+#X text 41 49 Description of Patch functionality, f 39;
 #X connect 1 0 2 0;
-#X connect 4 0 12 0;
-#X connect 5 0 4 0;
-#X connect 6 0 13 0;
-#X connect 7 0 6 0;
-#X connect 11 0 8 0;
-#X connect 11 0 8 1;
-#X connect 12 0 11 0;
-#X connect 13 0 11 1;
-#X connect 14 0 12 1;
-#X connect 15 0 13 1;
-#X connect 17 0 18 0;
-#X connect 17 0 20 0;
-#X connect 18 0 40 0;
-#X connect 19 0 21 0;
-#X connect 20 0 19 0;
-#X connect 21 0 41 0;
-#X connect 24 0 26 0;
-#X connect 25 0 27 0;
-#X connect 40 0 24 0;
-#X connect 41 0 25 0;

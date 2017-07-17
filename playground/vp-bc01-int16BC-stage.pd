@@ -1,6 +1,6 @@
-#N canvas 331 50 1099 1022 10;
+#N canvas 331 22 1099 741 10;
 #X obj 37 30 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2600 1;
+-1 -1 1300 1;
 #X obj 34 60 normtorange 16 1;
 #X floatatom 34 104 5 0 0 0 - - -, f 5;
 #X obj 34 123 s \$0-calc-bits;
