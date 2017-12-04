@@ -2,7 +2,7 @@
 
 Vanilla Processors is a book on how to develop audio FX with pure data. The book is divided into 7 chapters that are being released as the book is being written. Each chapter focusses on an individual FX. The chapters can be read individually but it's advised you read the chapters in numerical order. Each chapter contains two parts, one is a no bullshit one-pager that describes how to assemble the FX based on a patch that contains all parts needed to do the build. The second part is an in depth look at how the FX works and is implemented. It takes a somewhat more scientific approach whilst not trying to put you asleep. Note that it's not meant as a point and click type tutorial but can be regarded as the ressources that enable you to not only design and implement similar builds but also master the theory that the FX is based on.
 
-## Whats in the box?
+## What's in the box?
 Go check out the the currently planned content, the progress on individual chapters and estimated release dates here: [Progress.md](Progress.md)
 
 ## Who would want to read this?
