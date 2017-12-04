@@ -12,10 +12,10 @@ This book is aimed at anyone with an interest in how some popular audio FX work 
 Vanilla Processors is licensed under the Creative Commons license: LINK. All source code published with the book is open source and can be found here: LINK. This book is maintained in git: LINK. The current progress of the book is documented in the README (LINK) of the repository. Video material is planned and will be released after announcements made online. You can find our channel here: LINK
 
 ## What about me, though?
-We hope you do fork our stuff and make pull requests! Creating issues in the issue tracker is also appreciated. Also, give us some love, love online: LINKs. Feel free to drop your creations in our dropbox here (LINK) and we'll take your patch for a ride.
+We hope you do fork our stuff and make pull requests! Creating issues in the issue tracker is also appreciated.
 
 ## How can I support you guys?
-If you like our product, please consider supporting us and our efforts by becoming our Patreon: LINK
+Check out the other stuff were working on at [https://www.htaudio.de/](Happy Thoughts Audio) and share your thoughts with us online (see links below). If you like our products, please also consider supporting us and our efforts by becoming our Patreon: LINK. We are planning regular free and paid releases plus some hardware down the line and you can help make all this possible becoming a patreon. In return great supporter packs and other fancy shizzle awaits you.
 
 ## What else?
-Go read and hack already! Break, reinvent and mangle something and come up with cool FX patches you can share! We're excited to see what you come up with. Post it online: LINK LINK LINK
+Go read and hack already! Break, reinvent and mangle something and come up with cool FX patches you can share! We're excited to see what you come up with. Don't forget to drop us your builds so we can give them a spin: LINK. Also be sure to follow us and show us some love: [https://www.instagram.com/_htaudio/](Instgram/_htaudio) [https://www.facebook.com/happythoughtsaudio](facebook/happythoughtsaudio) [https://twitter.com/_htaudio](twitter/_htaudio) [](youtube/TODO)
