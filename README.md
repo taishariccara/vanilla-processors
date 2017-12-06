@@ -20,7 +20,7 @@ Each chapter contains:
 This book is aimed at anyone with an interest in how some popular audio FX work and with a keen drive to building some cool shit. No previous programming experience is assumed allthough this book is definitely not a Pd tutorial. The instructional parts of each chapter steer clear of any math, while the scientific part does include math aka crazy voodoo.
 
 ## Licensing?
-Vanilla Processors is licensed under the Creative Commons license: LINK. All source code published with the book is open sourceand licensed under the terms of the GPL: LINK
+Vanilla Processors is licensed under the Creative Commons license: LINK. All source code published with the book is open source and licensed under the terms of the GPL: LINK
 
 ## What about me, though?
 We hope you do fork our stuff and make pull requests! Creating issues in the issue tracker is also appreciated.
