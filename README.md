@@ -2,9 +2,10 @@
 
 Vanilla Processors is a book on how to develop audio FX with Pure Data. The book is divided into 7 chapters that are being released as the book is being written. Each chapter focusses on an individual FX. The chapters can be read individually but it's advised you read the chapters in numerical order since some of them refer to each other. Each chapter contains two parts, one is a no bullshit one-pager that describes how to assemble the FX based on a patch that contains all parts needed to do the build. The second part is an in-depth look at how the FX works inside the box. It takes a somewhat more scientific approach while not attempting to put you asleep. Note that it's not meant as a point and click type tutorial but can be regarded as the ressources that enable you to not only design and implement similar patches but also master the theory that the FX is based on.
 
-## What's in the box?
-Check out currently planned content, the progress on individual chapters and estimated chapter release dates here: [Progress.md](Progress.md). Some additional sound bites and video material will be published to accompany this book. We will update the progress sheet when this happens and there will be links to audio- and visual content spread out over the book. All updates to the material published in and around this book will be announced on our website and social media. Follow the links found below.
-The source repository is structured into top-level directories:
+## What's in the box, I mean book?
+Check out currently planned content, the progress on individual chapters and estimated chapter release dates here: [Progress.md](Progress.md). Each chapter is comprised of written content and sourc code to go with it. Additional sound bites and video material will be published to accompany this book wherever it is useful and will be directly linked to in the chapters. All updates to the material published in and around this book will be announced on our website and social media. Follow the links found below to hook up to our network.
+
+The book's source repository is structured into top-level directories:
 * Chapters: Well... all the individual chapters
 * Design: All design files that were created along the way, most of these will be found in the buil-assemblies released with each chapter
 * Playground: prototype madness, no guarantee that stuff in there is functional
