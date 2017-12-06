@@ -1,0 +1,24 @@
+#N canvas 284 98 279 503 10;
+#X obj 14 14 cnv 15 100 60 empty empty VanillaProcessors-BitCrusher
+0 0 0 15 -262144 -66577 0;
+#X obj 14 66 adc~;
+#X obj 14 403 dac~;
+#X obj 14 93 vp-bitcrusher-fx;
+#X text 236 25 v1.0;
+#X obj 14 431 cnv 15 250 35 empty empty empty 15 10 0 10 -233017 -66577
+0;
+#X text 18 431 Copyright © 2017 \, Benjamin Fabricius;
+#X text 18 446 Happy Thoughts Audio - htaudio.de;
+#X obj 17 477 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 32 477 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 48 477 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 63 477 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 14 472 cnv 15 100 20 empty empty License-Text 15 10 0 10 -233017
+-66577 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 0 2 1;

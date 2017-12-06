@@ -1,0 +1,152 @@
+#N canvas 63 99 936 690 10;
+#X obj 163 72 cyclone/scope~ 255 133 199 3 168 -1.5 1.5 0 0 0 0.11811
+205 229 232 74 79 77 96 98 102 0;
+#X obj 11 30 r f_bufsize;
+#X obj 10 52 r f_calccount;
+#X floatatom 168 226 5 8 256 2 Bufsize calc_bufsize f_bufsize, f 5
+;
+#X floatatom 222 226 5 2 8192 2 Calcct. calc_calccount f_calccount
+, f 5;
+#X obj 433 74 vsl 15 128 0 1 0 0 calc_search empty Search -10 -9 0
+10 -262144 -1 -1 8200 1;
+#X obj 577 64 r calc_search;
+#X floatatom 577 85 5 0 0 0 - - -, f 5;
+#X floatatom 577 150 5 0 0 0 - - -, f 5;
+#X obj 675 64 r calc_search;
+#X floatatom 675 86 5 0 0 0 - - -, f 5;
+#X floatatom 675 190 5 0 0 0 - - -, f 5;
+#X obj 675 213 s calc_calccount;
+#X obj 675 130 *;
+#X obj 577 174 s calc_bufsize;
+#X obj 675 105 fbounds 512 2;
+#X obj 577 104 fbounds 256 8;
+#X obj 577 126 ftoint-div;
+#X obj 675 152 ftoint-div;
+#X obj 474 74 vsl 15 128 -1 1 0 0 f_triglevel empty TrigLvl -11 -9
+0 10 -262144 -1 -1 0 1;
+#X obj 11 76 r f_triglevel;
+#X msg 11 98 triglevel \$1;
+#X obj 496 159 vradio 15 1 0 3 f_trigmode empty TrigMode 0 -8 0 10
+-262144 -1 -1 0;
+#X text 514 174 Up;
+#X text 514 189 Down;
+#X text 513 159 None;
+#X obj 11 119 r f_trigmode;
+#X msg 11 141 trigger \$1;
+#X obj 432 225 hradio 15 1 0 4 calc_delay empty Delay 0 -8 0 10 -262144
+-1 -1 0;
+#X text 497 225 x100ms;
+#X text 432 243 0;
+#X text 477 243 10;
+#X text 465 243 5;
+#X text 449 243 2;
+#X obj 791 86 sel 0 1 2 3;
+#X msg 791 135 0;
+#X obj 791 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 807 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 822 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 838 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 791 64 r calc_delay;
+#X msg 807 159 2;
+#X msg 823 184 5;
+#X msg 838 207 10;
+#X obj 815 261 * 100;
+#X floatatom 815 283 5 0 0 0 - - -, f 5;
+#X obj 815 302 s f_delay;
+#X obj 12 164 r f_delay;
+#X msg 12 186 delay \$1;
+#X obj 161 59 cnv 5 1 1 empty empty PCYCIK-SCOPE 0 0 0 24 -233017 -66577
+0;
+#X obj 168 260 cnv 5 5 5 empty empty HappyThoughtz_Audio 0 0 0 8 -262144
+-1 0;
+#X obj 11 6 inlet~;
+#X obj 155 39 cnv 5 1 1 empty empty IN 0 0 0 8 -233017 -66577 0;
+#X obj 360 225 tgl 15 0 calc_range empty Range -35 7 0 10 -262144 -1
+-1 0 1;
+#X floatatom 383 226 5 1 1.5 0 - - calc_rngval, f 5;
+#X obj 578 242 r calc_range;
+#X floatatom 578 263 5 0 0 0 - - -, f 5;
+#X obj 661 242 r calc_rngval;
+#X obj 578 282 sel 0 1;
+#X obj 581 526 s f_delayfact;
+#X obj 12 209 r f_delayfact;
+#X obj 12 342 print delay;
+#X msg 235 338 range -1 1;
+#X msg 222 383 range -1.2 1.2;
+#X msg 12 320 range \$1 \$2;
+#X obj 578 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 601 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 579 339 1;
+#X obj 658 377 * -1;
+#X obj 630 422 pack \$1 \$2;
+#X obj 608 373 * -1;
+#X obj 550 416 pack \$1 \$2;
+#X obj 661 264 f \$1;
+#X msg 622 338 \$1;
+#X msg 709 130 0.6;
+#X obj 575 31 loadbang;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 16 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 13 0 18 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 8 0;
+#X connect 18 0 11 0;
+#X connect 20 0 21 0;
+#X connect 21 0 0 0;
+#X connect 26 0 27 0;
+#X connect 27 0 0 0;
+#X connect 34 0 36 0;
+#X connect 34 1 37 0;
+#X connect 34 2 38 0;
+#X connect 34 3 39 0;
+#X connect 35 0 44 0;
+#X connect 36 0 35 0;
+#X connect 37 0 41 0;
+#X connect 38 0 42 0;
+#X connect 39 0 43 0;
+#X connect 40 0 34 0;
+#X connect 41 0 44 0;
+#X connect 42 0 44 0;
+#X connect 43 0 44 0;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
+#X connect 47 0 48 0;
+#X connect 48 0 0 0;
+#X connect 51 0 0 0;
+#X connect 55 0 56 0;
+#X connect 56 0 58 0;
+#X connect 57 0 72 0;
+#X connect 58 0 65 0;
+#X connect 58 1 66 0;
+#X connect 60 0 64 0;
+#X connect 62 0 0 0;
+#X connect 63 0 0 0;
+#X connect 64 0 61 0;
+#X connect 64 0 0 0;
+#X connect 65 0 67 0;
+#X connect 66 0 73 0;
+#X connect 67 0 70 0;
+#X connect 67 0 71 1;
+#X connect 68 0 69 0;
+#X connect 69 0 59 0;
+#X connect 70 0 71 0;
+#X connect 71 0 59 0;
+#X connect 72 0 73 0;
+#X connect 73 0 68 0;
+#X connect 73 0 69 1;
+#X connect 74 0 13 1;
+#X connect 75 0 74 0;
+#X coords 0 -1 1 1 410 240 2 150 30;

@@ -1,0 +1,80 @@
+#N canvas 324 116 1043 661 10;
+#X obj 525 5 cnv 15 250 600 empty empty DSP-Section 5 10 0 14 -232576
+-66577 0;
+#X text 537 46 dry sig;
+#X text 658 45 wet sig;
+#X obj 578 225 +~;
+#X obj 539 163 *~;
+#X obj 660 161 *~;
+#X obj 553 133 r~ \$0-calc-dry;
+#X obj 675 128 r~ \$0-calc-wet;
+#X obj 265 6 cnv 15 250 600 empty empty Input-Section 5 10 0 14 -203904
+-66577 0;
+#X obj 5 5 cnv 15 250 600 empty empty Description 5 10 0 14 -228856
+-66577 0;
+#X text 13 49 Mixes a dry (uneffected) and a wet(effected) signal into
+one output signal, f 39;
+#X obj 787 624 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 802 624 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 818 624 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 833 624 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 784 619 cnv 15 100 20 empty empty License-Text 15 10 0 10 -233017
+-66577 0;
+#X obj 7 616 cnv 15 250 35 empty empty empty 15 10 0 10 -233017 -66577
+0;
+#X text 11 618 Copyright © 2017 \, Benjamin Fabricius;
+#X text 11 633 Happy Thoughts Audio - htaudio.de;
+#X text 13 29 Dry Wet Mixer;
+#X obj 274 59 inlet~;
+#X obj 274 83 s~ \$0-inp-dry;
+#X obj 280 137 inlet~;
+#X text 273 33 1: Dry Audio Input;
+#X obj 280 161 s~ \$0-inp-wet;
+#X text 273 112 2: Wet Audio Input;
+#X text 275 188 ----- Effect parameter controls -----;
+#X obj 291 246 inlet;
+#X floatatom 291 268 5 0 0 0 - - -, f 5;
+#X text 277 210 3: Mix: select mix between dry and wet signal, f 37
+;
+#X obj 291 288 s \$0-calc-mix;
+#X obj 785 6 cnv 15 250 600 empty empty Calc-Helper-Section 5 10 0
+14 -204786 -66577 0;
+#X floatatom 825 111 5 0 0 0 - - -, f 5;
+#X obj 925 140 * -1;
+#X obj 925 118 - 1;
+#X floatatom 925 162 5 0 0 0 - - -, f 5;
+#X obj 825 152 line~;
+#X obj 925 203 line~;
+#X msg 825 130 \$1 50;
+#X msg 925 181 \$1 50;
+#X obj 539 66 r~ \$0-inp-dry;
+#X obj 659 65 r~ \$0-inp-wet;
+#X obj 825 52 r \$0-calc-mix;
+#X obj 926 229 s~ \$0-calc-dry;
+#X obj 825 184 s~ \$0-calc-wet;
+#X obj 578 247 outlet~;
+#X connect 3 0 45 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 4 1;
+#X connect 7 0 5 1;
+#X connect 20 0 21 0;
+#X connect 22 0 24 0;
+#X connect 27 0 28 0;
+#X connect 28 0 30 0;
+#X connect 32 0 38 0;
+#X connect 33 0 35 0;
+#X connect 34 0 33 0;
+#X connect 35 0 39 0;
+#X connect 36 0 44 0;
+#X connect 37 0 43 0;
+#X connect 38 0 36 0;
+#X connect 39 0 37 0;
+#X connect 40 0 4 0;
+#X connect 41 0 5 0;
+#X connect 42 0 32 0;
+#X connect 42 0 34 0;
