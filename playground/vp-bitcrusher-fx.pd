@@ -1,0 +1,51 @@
+#N canvas 123 137 513 409 10;
+#X obj 8 343 vp-bitcrusher~;
+#X obj 315 44 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 312 64 5 0 0 0 - - -, f 5;
+#X obj 317 157 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 314 177 5 0 0 0 - - -, f 5;
+#X obj 315 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 316 101 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 313 121 5 0 0 0 - - -, f 5;
+#X text 311 84 sample rate;
+#X text 312 140 redux amt.;
+#X text 335 254 crunch;
+#X obj 315 274 == 0;
+#X obj 318 210 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 315 230 5 0 0 0 - - -, f 5;
+#X text 313 193 redux fx mix;
+#X text 309 26 inp att.;
+#X obj 8 380 outlet~;
+#X obj 8 268 inlet~;
+#X obj 7 10 cnv 15 250 35 empty empty empty 15 10 0 10 -233017 -66577
+0;
+#X text 11 10 Copyright © 2017 \, Benjamin Fabricius;
+#X text 11 25 Happy Thoughts Audio - htaudio.de;
+#X obj 10 56 bng 15 250 50 0 open-license-txt! empty empty 17 7 0 10
+-262144 -1 -1;
+#X obj 25 56 bng 15 250 50 0 open-license-txt! empty empty 17 7 0 10
+-262144 -1 -1;
+#X obj 41 56 bng 15 250 50 0 open-license-txt! empty empty 17 7 0 10
+-262144 -1 -1;
+#X obj 56 56 bng 15 250 50 0 open-license-txt! empty empty 17 7 0 10
+-262144 -1 -1;
+#X obj 7 51 cnv 15 100 20 empty empty License-Text 15 10 0 10 -233017
+-66577 0;
+#X connect 0 0 16 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 1;
+#X connect 3 0 4 0;
+#X connect 4 0 0 3;
+#X connect 5 0 11 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 2;
+#X connect 11 0 0 5;
+#X connect 12 0 13 0;
+#X connect 13 0 0 4;
+#X connect 17 0 0 0;
+#X coords 0 -1 1 1 200 300 1 300 10;

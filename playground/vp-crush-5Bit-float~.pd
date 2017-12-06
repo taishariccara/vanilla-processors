@@ -1,0 +1,62 @@
+#N canvas 42 55 784 542 10;
+#X obj 264 6 cnv 15 250 200 empty empty DSP-Section 5 10 0 14 -232576
+-66577 0;
+#X obj 6 137 cnv 15 250 350 empty empty Input-Section 5 10 0 14 -203904
+-66577 0;
+#X obj 4 5 cnv 15 250 120 empty empty Description 5 10 0 14 -228856
+-66577 0;
+#X obj 522 503 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 537 503 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 553 503 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 568 503 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 519 498 cnv 15 100 20 empty empty License-Text 15 10 0 10 -233017
+-66577 0;
+#X obj 6 498 cnv 15 250 35 empty empty empty 15 10 0 10 -233017 -66577
+0;
+#X text 10 498 Copyright © 2017 \, Benjamin Fabricius;
+#X text 10 513 Happy Thoughts Audio - htaudio.de;
+#X floatatom 23 376 12 0 0 0 - - -, f 12;
+#X obj 280 49 r~ \$0-inp;
+#X obj 523 7 cnv 15 250 400 empty empty Visualization-Section 5 10
+0 14 -228856 -66577 0;
+#X obj 536 93 sidekik-scope;
+#X obj 536 63 r~ \$0-inp;
+#X obj 280 129 s~ \$0-outp;
+#X obj 537 238 r~ \$0-outp;
+#X obj 537 268 sidekik-scope;
+#X text 532 35 Input Signal;
+#X text 531 214 Output Signal;
+#X obj 23 288 inlet;
+#X obj 381 128 outlet~;
+#X text 12 29 5Bit floating point bit crusher;
+#X obj 11 210 s~ \$0-inp;
+#X obj 11 186 inlet~;
+#X text 10 160 1: Audio Input;
+#X text 10 234 ----- Effect parameter controls -----;
+#X text 12 252 2: Redux Amount: knob input normalized range: 0-1.0
+, f 37;
+#X text 12 49 This is a 5 bit floating point bitcrusher. It works by
+adding quantisation error to the input and operates with float support
+for "soft" \, fractional redux increments., f 37;
+#X obj 23 310 normtorange 32 2;
+#X obj 23 395 s \$0-calc-reduxamt;
+#X obj 23 354 line 2 10;
+#X obj 347 48 r \$0-calc-reduxamt;
+#X obj 280 78 expr~ floor($v1*$f2)/$f2;
+#X msg 23 332 \$1 150;
+#X connect 11 0 31 0;
+#X connect 12 0 34 0;
+#X connect 15 0 14 0;
+#X connect 17 0 18 0;
+#X connect 21 0 30 0;
+#X connect 25 0 24 0;
+#X connect 30 0 35 0;
+#X connect 32 0 11 0;
+#X connect 33 0 34 1;
+#X connect 34 0 16 0;
+#X connect 34 0 22 0;
+#X connect 35 0 32 0;

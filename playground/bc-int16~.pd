@@ -1,0 +1,104 @@
+#N canvas 671 71 808 689 10;
+#X obj 275 5 cnv 15 250 100 empty empty On/Off 5 10 0 14 -261234 -66577
+0;
+#X obj 276 138 cnv 15 250 400 empty empty DSP-Section 5 10 0 14 -232576
+-66577 0;
+#X obj 6 137 cnv 15 250 350 empty empty Input-Section 5 10 0 14 -203904
+-66577 0;
+#X obj 4 5 cnv 15 250 120 empty empty Description 5 10 0 14 -228856
+-66577 0;
+#N canvas 90 309 450 265 macros-do-not-delete 0;
+#N canvas 764 72 450 176 license-text 0;
+#X text 20 13 Copyright ©  2017 \, Benjamin Fabricius \, Vanilla
+Processors is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation \, either version 3 of the License \,
+or any later version. This program is distributed in the hope that
+it will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details.;
+#X restore 15 16 pd license-text;
+#X msg 15 61 1;
+#X msg 15 83 \; pd-license-text vis \$1;
+#X obj 15 39 r open-license-txt!;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X restore 655 649 pd macros-do-not-delete;
+#X obj 548 653 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 563 653 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 579 653 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 594 653 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 545 648 cnv 15 100 20 empty empty License-Text 15 10 0 10 -233017
+-66577 0;
+#X obj 8 647 cnv 15 250 35 empty empty empty 15 10 0 10 -233017 -66577
+0;
+#X text 12 647 Copyright © 2017 \, Benjamin Fabricius;
+#X text 12 662 Happy Thoughts Audio - htaudio.de;
+#X text 12 29 16 Bit INT bitcrusher stage;
+#X text 12 49 Reduce the bit depth of samples by true integer rounding
+with wrap~ in order to achieve bitcrushing fx. This bitcrusher supports
+bitcrushing with depths of 1-16 bits of depth., f 37;
+#X obj 35 230 normtorange 16 1;
+#X floatatom 35 274 5 0 0 0 - - -, f 5;
+#X obj 35 293 s \$0-calc-bits;
+#X obj 35 252 ftoint-wrap;
+#X obj 25 401 s~ \$0-inp;
+#X obj 546 6 cnv 15 250 200 empty empty Calc-Helper-Section 5 10 0
+14 -204786 -66577 0;
+#X obj 559 68 r \$0-calc-bits;
+#X obj 559 137 <<;
+#X msg 559 90 1 \$1;
+#X obj 559 112 unpack f f;
+#X floatatom 559 159 5 0 0 0 - - -, f 5;
+#X obj 559 178 s \$0-calc-steps;
+#X text 555 32 Calculate new quantization steps using bit depth, f
+38;
+#X obj 292 181 r~ \$0-inp;
+#X obj 414 181 r \$0-calc-steps;
+#X obj 414 203 sig~;
+#X obj 351 230 *~;
+#X obj 377 263 wrap~;
+#X obj 401 349 /~;
+#X obj 351 304 -~;
+#X obj 547 224 cnv 15 250 400 empty empty Visualization-Section 5 10
+0 14 -228856 -66577 0;
+#X obj 560 310 sidekik-scope;
+#X obj 560 280 r~ \$0-inp;
+#X obj 312 442 s~ \$0-outp;
+#X obj 561 455 r~ \$0-outp;
+#X obj 561 485 sidekik-scope;
+#X text 556 252 Input Signal;
+#X text 555 431 Output Signal;
+#X text 16 168 1: Bit Depth: knob input normalized range: 0-1.0, f
+37;
+#X obj 35 206 inlet;
+#X text 21 331 2: Audio Input;
+#X obj 25 372 inlet~;
+#X obj 401 443 outlet~;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 18 0 16 0;
+#X connect 21 0 23 0;
+#X connect 22 0 25 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X connect 24 1 22 1;
+#X connect 25 0 26 0;
+#X connect 28 0 31 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 1;
+#X connect 30 0 33 1;
+#X connect 31 0 32 0;
+#X connect 31 0 34 0;
+#X connect 32 0 34 1;
+#X connect 33 0 38 0;
+#X connect 33 0 47 0;
+#X connect 34 0 33 0;
+#X connect 37 0 36 0;
+#X connect 39 0 40 0;
+#X connect 44 0 15 0;
+#X connect 46 0 19 0;

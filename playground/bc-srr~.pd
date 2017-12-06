@@ -1,0 +1,150 @@
+#N canvas 344 101 1073 695 10;
+#X obj 274 5 cnv 15 250 100 empty empty On/Off 5 10 0 14 -261234 -66577
+0;
+#X obj 275 138 cnv 15 250 400 empty empty DSP-Section 5 10 0 14 -232576
+-66577 0;
+#X obj 5 217 cnv 15 250 400 empty empty Input-Section 5 10 0 14 -203904
+-66577 0;
+#X obj 3 5 cnv 15 250 195 empty empty Description 5 10 0 14 -228856
+-66577 0;
+#N canvas 90 309 450 265 macros-do-not-delete 0;
+#N canvas 755 490 450 176 license-text 0;
+#X text 20 13 Copyright ©  2017 \, Benjamin Fabricius \, Vanilla
+Processors is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation \, either version 3 of the License \,
+or any later version. This program is distributed in the hope that
+it will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details.;
+#X restore 15 16 pd license-text;
+#X msg 15 61 1;
+#X msg 15 83 \; pd-license-text vis \$1;
+#X obj 15 39 r open-license-txt!;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X restore 914 649 pd macros-do-not-delete;
+#X obj 807 653 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 822 653 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 838 653 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 853 653 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 804 648 cnv 15 100 20 empty empty License-Text 15 10 0 10 -233017
+-66577 0;
+#X obj 7 647 cnv 15 250 35 empty empty empty 15 10 0 10 -233017 -66577
+0;
+#X text 11 647 Copyright © 2017 \, Benjamin Fabricius;
+#X text 11 662 Happy Thoughts Audio - htaudio.de;
+#X obj 545 6 cnv 15 250 550 empty empty Calc-Helper-Section 5 10 0
+14 -204786 -66577 0;
+#X text 554 32 Calculate new quantization steps using bit depth, f
+38;
+#X obj 806 6 cnv 15 250 400 empty empty Visualization-Section 5 10
+0 14 -228856 -66577 0;
+#X obj 52 476 s \$0-calc-srramt;
+#X obj 31 305 s~ \$0-inp;
+#X obj 31 271 inlet~;
+#X obj 563 148 r \$0-calc-srramt;
+#X obj 288 174 r~ \$0-inp;
+#X obj 701 79 loadbang;
+#X obj 701 101 sr;
+#X floatatom 701 163 5 0 0 0 - - -, f 5;
+#X obj 668 195 sr-div;
+#X floatatom 668 288 5 0 0 0 - - -, f 5;
+#X obj 701 123 i 11025;
+#X text 577 287 clk rate in Hz;
+#X obj 288 253 lop~ 2000;
+#X obj 288 279 lop~ 2000;
+#X obj 288 312 samphold~;
+#X obj 288 384 lop~ 2000;
+#X obj 288 406 lop~ 2000;
+#X obj 668 324 s \$0-trigclk;
+#X obj 418 203 r pd-dsp-started;
+#X obj 379 175 r pd-dsp-stopped;
+#X obj 379 295 clockwerk~;
+#X msg 418 225 1;
+#X msg 379 197 0;
+#X obj 382 498 s~ \$0-outp;
+#X obj 436 265 r \$0-trigclk;
+#X obj 820 94 sidekik-scope;
+#X obj 820 64 r~ \$0-inp;
+#X obj 821 239 r~ \$0-outp;
+#X obj 821 269 sidekik-scope;
+#X text 816 36 Input Signal;
+#X text 815 215 Output Signal;
+#X floatatom 52 446 5 0 0 0 - - -, f 5;
+#X obj 52 378 inlet;
+#X obj 289 498 outlet~;
+#X text 11 29 Sample Rate Reduction Unit;
+#X obj 52 402 normtorange 0.3 0;
+#X obj 668 239 clip 0 12000;
+#X obj 289 458 *~;
+#X obj 376 388 *~;
+#X msg 733 447 \$1 20;
+#X msg 602 451 \$1 20;
+#X obj 601 429 == 0;
+#X obj 602 483 line~;
+#X obj 733 482 line~;
+#X obj 732 425 >= 1;
+#X text 565 359 Amp Factors for xfading between output filter or no
+output filter, f 37;
+#X text 16 508 3: Harshalizer On/Off: Turn output filtering on or off
+, f 37;
+#X obj 63 550 inlet;
+#X text 10 245 1: Audio Input;
+#X text 13 339 2: Sample Rate: Set SR to downsample to, f 37;
+#X obj 63 572 s \$0-calc-io-ofilt;
+#X obj 601 393 r \$0-calc-io-ofilt;
+#X obj 602 505 s~ \$0-ofilt-off;
+#X obj 690 532 s~ \$0-ofilt-on;
+#X obj 392 349 r~ \$0-ofilt-off;
+#X obj 378 442 r~ \$0-ofilt-on;
+#X text 11 50 Downwsample an audio input. Left input is audio input
+\, the middle input expect a slider range [0 \; 1] to drive the rate
+at which to downsample [0-12kHz]. The right inlet expects a message
+that is either 0 for disabling output filtering or >=1 to enable the
+output filter., f 38;
+#X connect 18 0 17 0;
+#X connect 19 0 24 0;
+#X connect 20 0 28 0;
+#X connect 21 0 22 0;
+#X connect 22 0 26 0;
+#X connect 23 0 24 2;
+#X connect 24 0 52 0;
+#X connect 25 0 33 0;
+#X connect 26 0 23 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 30 0 54 0;
+#X connect 31 0 32 0;
+#X connect 32 0 39 0;
+#X connect 32 0 53 0;
+#X connect 34 0 37 0;
+#X connect 35 0 38 0;
+#X connect 36 0 30 1;
+#X connect 37 0 36 0;
+#X connect 38 0 36 0;
+#X connect 40 0 36 1;
+#X connect 42 0 41 0;
+#X connect 43 0 44 0;
+#X connect 47 0 16 0;
+#X connect 48 0 51 0;
+#X connect 51 0 47 0;
+#X connect 52 0 25 0;
+#X connect 53 0 49 0;
+#X connect 54 0 49 0;
+#X connect 55 0 59 0;
+#X connect 56 0 58 0;
+#X connect 57 0 56 0;
+#X connect 58 0 68 0;
+#X connect 59 0 69 0;
+#X connect 60 0 55 0;
+#X connect 63 0 66 0;
+#X connect 67 0 57 0;
+#X connect 67 0 60 0;
+#X connect 70 0 54 1;
+#X connect 71 0 53 1;

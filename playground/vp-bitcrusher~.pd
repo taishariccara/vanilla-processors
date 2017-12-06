@@ -1,0 +1,126 @@
+#N canvas 47 75 1099 753 10;
+#X obj 528 6 cnv 15 300 700 empty empty DSP-Section 5 10 0 14 -232576
+-66577 0;
+#X obj 266 5 cnv 15 250 700 empty empty Input-Section 5 10 0 14 -203904
+-66577 0;
+#X obj 3 5 cnv 15 250 700 empty empty Description 5 10 0 14 -228856
+-66577 0;
+#X obj 992 720 bng 15 250 50 0 open-license-txt! empty empty 17 7 0
+10 -262144 -1 -1;
+#X obj 1007 720 bng 15 250 50 0 open-license-txt! empty empty 17 7
+0 10 -262144 -1 -1;
+#X obj 1023 720 bng 15 250 50 0 open-license-txt! empty empty 17 7
+0 10 -262144 -1 -1;
+#X obj 1038 720 bng 15 250 50 0 open-license-txt! empty empty 17 7
+0 10 -262144 -1 -1;
+#X obj 989 715 cnv 15 100 20 empty empty License-Text 15 10 0 10 -233017
+-66577 0;
+#X obj 7 714 cnv 15 250 35 empty empty empty 15 10 0 10 -233017 -66577
+0;
+#X text 11 714 Copyright © 2017 \, Benjamin Fabricius;
+#X text 11 729 Happy Thoughts Audio - htaudio.de;
+#X obj 840 6 cnv 15 250 700 empty empty Visualization-Section 5 10
+0 14 -228856 -66577 0;
+#X obj 272 83 s~ \$0-inp;
+#X obj 272 59 inlet~;
+#X obj 561 62 r~ \$0-inp;
+#X obj 854 94 sidekik-scope;
+#X obj 854 64 r~ \$0-inp;
+#X obj 855 239 r~ \$0-outp;
+#X obj 855 269 sidekik-scope;
+#X text 850 36 Input Signal;
+#X text 849 215 Output Signal;
+#X floatatom 294 303 5 0 0 0 - - -, f 5;
+#X obj 294 280 inlet;
+#X obj 564 516 outlet~;
+#X obj 315 616 inlet;
+#X text 271 33 1: Audio Input;
+#X text 11 28 Vanilla Processors Bitcrusher;
+#X text 274 117 ----- Effect parameter controls -----;
+#X text 274 142 2: Input Gain: input attenuation;
+#X obj 288 211 s \$0-calc-inpdrive;
+#X text 274 243 3: Sample Rate: Set rate to downsample to, f 37;
+#X obj 315 638 >= 1;
+#X obj 630 62 r \$0-calc-inpdrive;
+#X obj 630 84 f 1;
+#X obj 561 114 *~;
+#X obj 625 516 s~ \$0-outp;
+#X floatatom 315 660 5 0 0 0 - - -, f 5;
+#X obj 288 169 inlet;
+#X floatatom 288 191 5 0 0 0 - - -, f 5;
+#X obj 610 343 vp-crush-5Bit-float~;
+#X text 275 578 5: Harshalizer On/Off: Turn output filtering on or
+off, f 37;
+#X floatatom 299 413 5 0 0 0 - - -, f 5;
+#X obj 299 390 inlet;
+#X obj 299 432 s \$0-calc-reduxamt;
+#X text 275 353 4: Redux Amount: Sets bit depth reduction, f 37;
+#X obj 664 238 r \$0-calc-reduxamt;
+#X obj 562 191 vp-samplerateredux~;
+#X text 11 46 Simple bitcrusher distortion effect. This FX processes
+audio by aliasing the input and mixing in quantisation distortion.
+The input runs through an attenuator \, a sample rate reducer and is
+then split into a dry and wet signal path. The wet signal is processed
+by a bit depth reducer and is then mixed into the dry signal before
+being sent to the output. The harshalizer control adds optional low
+pass filterig to the sample rate redux., f 39;
+#X obj 315 678 s \$0-calc-harshalizer-io;
+#X obj 630 164 r \$0-calc-harshalizer-io;
+#X obj 294 322 s \$0-calc-srredux;
+#X obj 617 139 r \$0-calc-srredux;
+#X obj 564 419 vp-drywet-mixer~;
+#X floatatom 307 523 5 0 0 0 - - -, f 5;
+#X obj 307 500 inlet;
+#X text 275 463 5: Redux Mix: dry/wet mix for crusher fx, f 38;
+#X obj 307 542 s \$0-calc-drywetamt;
+#X obj 633 393 r \$0-calc-drywetamt;
+#X obj 664 260 - 1;
+#X obj 664 282 * -1;
+#X floatatom 664 304 5 0 0 0 - - -, f 5;
+#N canvas 90 309 450 265 macros-do-not-delete 0;
+#N canvas 792 527 450 176 license-text 0;
+#X text 20 13 Copyright ©  2017 \, Benjamin Fabricius \, Vanilla
+Processors is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation \, either version 3 of the License \,
+or any later version. This program is distributed in the hope that
+it will be useful \, but WITHOUT ANY WARRANTY \; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+the GNU General Public License for more details.;
+#X restore 15 16 pd license-text;
+#X msg 15 61 1;
+#X msg 15 83 \; pd-license-text vis \$1;
+#X obj 15 39 r open-license-txt!;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X restore 842 717 pd macros-do-not-delete;
+#X connect 13 0 12 0;
+#X connect 14 0 34 0;
+#X connect 16 0 15 0;
+#X connect 17 0 18 0;
+#X connect 21 0 50 0;
+#X connect 22 0 21 0;
+#X connect 24 0 31 0;
+#X connect 31 0 36 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 1;
+#X connect 34 0 46 0;
+#X connect 36 0 48 0;
+#X connect 37 0 38 0;
+#X connect 38 0 29 0;
+#X connect 39 0 52 1;
+#X connect 41 0 43 0;
+#X connect 42 0 41 0;
+#X connect 45 0 58 0;
+#X connect 46 0 39 0;
+#X connect 46 0 52 0;
+#X connect 49 0 46 2;
+#X connect 51 0 46 1;
+#X connect 52 0 23 0;
+#X connect 52 0 35 0;
+#X connect 53 0 56 0;
+#X connect 54 0 53 0;
+#X connect 57 0 52 2;
+#X connect 58 0 59 0;
+#X connect 59 0 60 0;
+#X connect 60 0 39 1;
