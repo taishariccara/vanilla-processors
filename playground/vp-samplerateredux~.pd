@@ -1,4 +1,4 @@
-#N canvas 119 141 1063 668 10;
+#N canvas 1564 92 1063 668 10;
 #X obj 275 6 cnv 15 250 610 empty empty DSP-Section 5 10 0 14 -232576
 -66577 0;
 #X obj 5 217 cnv 15 250 400 empty empty Input-Section 5 10 0 14 -203904
@@ -25,7 +25,7 @@
 38;
 #X obj 806 6 cnv 15 250 610 empty empty Visualization-Section 5 10
 0 14 -228856 -66577 0;
-#X obj 52 476 s \$0-calc-srramt;
+#X obj 52 486 s \$0-calc-srramt;
 #X obj 31 305 s~ \$0-inp;
 #X obj 31 271 inlet~;
 #X obj 563 148 r \$0-calc-srramt;
@@ -56,11 +56,11 @@
 #X obj 821 269 sidekik-scope;
 #X text 816 36 Input Signal;
 #X text 815 215 Output Signal;
-#X floatatom 52 446 5 0 0 0 - - -, f 5;
-#X obj 52 378 inlet;
+#X floatatom 52 456 5 0 0 0 - - -, f 5;
+#X obj 52 408 inlet;
 #X obj 289 366 outlet~;
 #X text 11 29 Sample Rate Reduction Unit;
-#X obj 52 402 normtorange 0.3 0;
+#X obj 52 432 normtorange 0.3 0;
 #X obj 668 239 clip 0 12000;
 #X obj 289 326 *~;
 #X obj 376 256 *~;
@@ -72,10 +72,10 @@
 #X obj 712 447 >= 1;
 #X text 565 359 Amp Factors for xfading between output filter or no
 output filter, f 37;
-#X obj 63 550 inlet;
+#X obj 63 560 inlet;
 #X text 10 245 1: Audio Input;
-#X text 13 339 2: Sample Rate: Set SR to downsample to, f 37;
-#X obj 63 572 s \$0-calc-io-ofilt;
+#X text 13 370 2: Sample Rate: Set SR to downsample to, f 37;
+#X obj 63 582 s \$0-calc-io-ofilt;
 #X obj 581 415 r \$0-calc-io-ofilt;
 #X obj 582 527 s~ \$0-ofilt-off;
 #X obj 670 554 s~ \$0-ofilt-on;
@@ -86,8 +86,9 @@ output filter, f 37;
 at which to downsample [0-12kHz]. The right inlet expects a message
 that is either 0 for disabling output filtering or >=1 to enable the
 output filter., f 38;
-#X text 16 508 3: Crunch On/Off: Turn output filtering on or off,
+#X text 16 518 3: Crunch On/Off: Turn output filtering on or off,
 f 37;
+#X text 14 341 ----- Effect parameter controls -----;
 #X connect 16 0 15 0;
 #X connect 17 0 22 0;
 #X connect 18 0 26 0;
