@@ -24,7 +24,7 @@ Each chapter contains:
 Vanilla Processors is licensed under the Creative Commons license: LINK. All source code published with the book is open source and licensed under the terms of the GPL: LINK
 
 ## What about me, though?
-Wan't to beta-test or become a proof-reader and help make this book better? If yes, check this out (TODO: Collab page).
+Wan't to beta-test or become a proof-reader and help make this book better? If yes, check [check this out](BetaTestAndProofread.md).
 We hope you do fork our stuff and make pull requests! Creating issues in the issue tracker for any errors in technical content is also appreciated.
 
 ## How else can I support you guys?
