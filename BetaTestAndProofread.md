@@ -28,4 +28,4 @@ If you want to proofread our book to get it ready for the initial release, pleas
 
 Thanks for helping us improve the book.
 
-For any other question contact us directly via email at: issues@htaudio.de
+For any other question contact us directly via email at: testing@htaudio.de
