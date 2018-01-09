@@ -24,9 +24,10 @@ Each chapter contains:
 Vanilla Processors is licensed under the Creative Commons license: LINK. All source code published with the book is open source and licensed under the terms of the GPL: LINK
 
 ## What about me, though?
-We hope you do fork our stuff and make pull requests! Creating issues in the issue tracker is also appreciated.
+Wan't to beta-test or become a proof-reader and help make this book better? If yes, check this out (TODO: Collab page).
+We hope you do fork our stuff and make pull requests! Creating issues in the issue tracker for any errors in technical content is also appreciated.
 
-## How can I support you guys?
+## How else can I support you guys?
 Check out the other stuff were working on at [Happy Thoughts Audio](https://www.htaudio.de/) and share your thoughts with us online (see links below). If you like our products, please tell a friend about or even consider supporting us and our efforts by becoming our Patreon: LINK. We are planning regular free and paid releases plus some hardware down the line and you can help make all this possible becoming a patreon. In return great supporter packs and other fancy shizzle awaits you plus we vow to keep publishing open source and hardware.
 
 ## What else?
