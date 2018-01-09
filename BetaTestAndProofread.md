@@ -20,7 +20,7 @@ We will keep careful track of issues and plan them in if it makes sense. You wil
 If you want to proofread our book to get it ready for the initial release, please follow these steps:
 1. Create a github account if you don't have one yet. 
 2. Find the project **bfabricius/vanilla-processors**
-3. Fork the project. You now have the latest version of the book source code.
+3. Fork the project. You now have the latest version of the book source code. Make sure to setup your for to remote-track **bfabricius/vanilla-processors remotes/origin/master"** branch
 4. Check the main repository website to get a list of articles (and their paths within the source) that are up for proofreading.
 5. The source code is maintained in markdown language for simplicity. Organize a markdown text editor or plaine text editor, so that you can make your proof reading changes to the chapter in question.
 6. Once you are finished editing, create a pull request on github to request your changes to be merged into our master branch.
